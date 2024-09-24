@@ -1,25 +1,45 @@
+import { Link, useLocation } from "react-router-dom"; 
+import cs from 'classnames';
 
 const NavBar = () => {
+  const { pathname } = useLocation(); 
+
   return (
     <header className="fixed top-0 left-0 h-full w-1/5 flex flex-col justify-between p-8 bg-primarybg">
       <ul className="space-y-6">
         <li>
-          <a href='/' className="text-xl font-bold">
+          <Link to='/' className="text-xl font-bold">
             Fatima Baghandeh
-          </a>
+          </Link>
         </li>
         <li>
-          <a >
+          <Link
+            to="/projects"
+            className={cs(
+              "hover:font-bold",
+              { "font-bold": pathname === "/projects" } 
+            )}
+          >
             Projects
-          </a>
+          </Link>
         </li>
         <li>
-          <a className="">
+          <Link
+            to="/contact"
+            className={cs(
+              "hover:font-bold",
+              { "font-bold": pathname === "/contact" } 
+            )}
+          >
             Contact
-          </a>
+          </Link>
         </li>
         <li>
-          <a href='fatimaBaghandehResume.pdf' target="_blank" className=" p-2 -ml-2 rounded-lg text-primarytext">
+          <a
+            href='Resume.pdf'
+            target="_blank"
+            className="text-primarytext hover:font-bold"
+          >
             Resume
           </a>
         </li>
