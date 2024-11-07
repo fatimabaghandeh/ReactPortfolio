@@ -1,12 +1,12 @@
 import { Outlet } from 'react-router-dom'
-import NavBar from './navBar'
+import Header from './header'
 function Layout() {
   return (
-    <div className='flex'>
-        <NavBar/>
-       <Outlet/>
+
+     <div> 
+      <Header/>
+      <Outlet/></div> 
       
-    </div>
   )
 }
 

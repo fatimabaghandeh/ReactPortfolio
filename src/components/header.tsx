@@ -1,17 +1,14 @@
 import { Link, useLocation } from "react-router-dom"; 
 import cs from 'classnames';
 
-const NavBar = () => {
+const Header = () => {
   const { pathname } = useLocation(); 
 
   return (
-    <header className="fixed top-0 left-0 h-full w-1/5 flex flex-col justify-between p-8 bg-primarybg">
-      <ul className="space-y-6">
-        <li>
-          <Link to='/' className="text-xl font-bold">
-            Fatima Baghandeh
-          </Link>
-        </li>
+    <header className=" ">
+      <ul className="flex justify-center md:text-xl lg:justify-end space-x-12 lg:text-xl mt-8">
+
+     
         <li>
           <Link
             to="/projects"
@@ -35,17 +32,22 @@ const NavBar = () => {
           </Link>
         </li>
         <li>
-          <a
-            href='Resume.pdf'
-            target="_blank"
-            className="text-primarytext hover:font-bold"
+          <Link
+            to="/"
+            className={cs(
+              "hover:font-bold",
+              { "font-bold": pathname === "/" } 
+            )}
           >
-            Resume
-          </a>
+            Home
+          </Link>
         </li>
+     
+      
+        
       </ul>
     </header>
   );
 };
 
-export default NavBar;
+export default Header;
