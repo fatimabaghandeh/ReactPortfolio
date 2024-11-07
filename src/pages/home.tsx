@@ -1,4 +1,3 @@
-import ProjectList from "../api/projects";
 import Typewriter from "../components/Type-writer";
 
 export default function App() {
